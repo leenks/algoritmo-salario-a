@@ -1,32 +1,57 @@
-# Prerequisites
-*.d
+Algoritmo "menu"
+var sal, ns, imp: real
+    op: inteiro
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+inicio
+ escreval ("Digite Seu Salário")
+  leia (sal)
+escreval ("Digite 1 para calculo de imposto, 2 para novo salário, 3 para classificação de salário")
+  leia (op)
+se (op>=1)e(op<=3) entao
+    escolha op
+caso 1
+    se (sal<500) entao
+      escreval ("O imposto é ", imp)
+    senao
+       se (sal>=500)e(sal<850) entao
+       imp<-sal*0.10
+          escreval ("O imposto é de", imp)
+      senao
+         se (sal>850) entao
+         imp<-sal*0.15
+            escreval ("O imposto é de ", imp)
+         fimse
+      fimse
+    fimse
+caso 2
+    se (sal>=500) entao
+    ns<-sal+25
+    escreval ("Novo sálario: ", ns:4:2)
+      senao
+          se (sal>=750)e(sal<1500) entao
+              ns<-sal+50
+                 escreval ("Novo salário: ",ns:4:2)
+      senao
+             se (sal>=450)e(sal<750) entao
+                ns<-sal+75
+                 escreval ("Novo salário: ", ns:4:2)
+       senao
+                se (sal<450)entao
+                   escreval ("Novo Salário: ", ns:4:2)
+                fimse
+             fimse
+          fimse
+       fimse
+caso 3
+  se (sal<=700) entao
+    escreval ("Mal remunerado")
+  senao
+    se (sal>700) entao
+      escreval ("Bem remunerado")
+    fimse
+ fimse
+fimescolha
+ senao
+  escreval ("Opção Inválida")
+ fimse
+Fimalgoritmo
